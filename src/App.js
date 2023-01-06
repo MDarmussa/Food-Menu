@@ -12,7 +12,8 @@ function App() {
 
   //2- Filter by category
   const filterByCategory = (cat) => {
-    //to filter all (All button)
+    //to filter all (All button) using if statement. 
+    // If (cat == All): bring all the original menu, else: bring the newArr (new categories: breakfast, luch OR dinner)
     if(cat === "All"){
       setItemsData(items)
     } else {
