@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Container, Form, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap'
 
-function NavBar() {
+function NavBar({ filterBySearch }) {
+
+     const [searchValue, setSearchValue] = useState('')
+     const onSearch = () => {
+          //we can apply e.prevendefault in here instead using it in the form.
+          //forms should always have e.prevent default to avoid uploading the browser when submitting or searching
+          filterBySearch(searchValue)
+          setSearchValue('') //after the search, the search box will clear the text
+
+     }
   return (
     <Row>
      <Navbar bg="dark" expand="lg" variant='dark'>
@@ -22,8 +31,10 @@ function NavBar() {
                     type="text"
                     placeholder="Find a Dish..."
                     className="mx-2"
+                    onChange= {(e) => setSearchValue(e.target.value)}
+                    value={searchValue}
                     />
-                    <Button className='btn-search'>Search</Button>
+                    <Button onClick={() => onSearch()} className='btn-search'>Search</Button>
                </Form>
                </Navbar.Collapse>
           </Container>
