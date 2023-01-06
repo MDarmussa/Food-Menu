@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from "react-bootstrap";
+import NavBar from "./components/NavBar";
+import Header from "./components/Header";
+import Category from "./components/Category";
+import ItemLists from "./components/ItemLists";
+import { items } from "./data";
+import { useState } from "react";
 
 function App() {
+  //step 1 -- then pass it as a prop by define a variable for <ItemLists itemsData={itemsData}/>
+  const [itemsData, setItemsData] = useState(items)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="color-body font">
+      <NavBar />
+
+      <Container>
+          <Header />
+          <Category />
+          <ItemLists itemsData={itemsData} />
+      </Container>
+
     </div>
   );
 }
