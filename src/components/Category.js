@@ -1,8 +1,11 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
+import Roll from 'react-reveal/Roll';
 
-function Category({filterByCategory}) {
 
+function Category({filterByCategory, allCategory}) {
+
+  //to filter by category
   const onFilter = (cat) => {
     filterByCategory(cat)
   }
@@ -10,12 +13,15 @@ function Category({filterByCategory}) {
   return (
     <Row className='my-2 mb-5'>
      <Col sm='12' className='d-flex justify-content-center'> 
+     {
+      allCategory.length >= 1 ? (allCategory.map((cat) => {
+        return(
           <div>
-               <button onClick={() => onFilter('All')} style={{border: "1px solid #b45b35", background: "#B45B35", color:"white"}} className='btn mx-2'>All</button>
-               <button onClick={() => onFilter('Breakfast')} style={{border: "1px solid #b45b35"}} className='btn mx-2'>Breakfast</button>
-               <button onClick={() => onFilter('Lunch')} style={{border: "1px solid #b45b35"}} className='btn mx-2'>Lunch</button>
-               <button onClick={() => onFilter('Dinner')} style={{border: "1px solid #b45b35"}} className='btn mx-2'>Dinner</button>
+            <button onClick={() => onFilter(cat)} style={{border: "1px solid #b45b35"}} className='btn mx-2'>{cat}</button>
           </div>
+        )
+      })) : <h4>No Categories Found</h4>
+     }
      </Col>
     </Row>
   )
