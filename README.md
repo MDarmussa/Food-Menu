@@ -9,3 +9,7 @@ Some features and functionalities were added to this project:
   - Search form using filter method.
   
   
+Resources and linkss:
+  https://www.react-reveal.com/
+  https://react-bootstrap.github.io/
+  https://fonts.google.com/about
