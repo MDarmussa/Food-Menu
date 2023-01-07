@@ -10,6 +10,6 @@ Some features and functionalities were added to this project:
   
   
 Resources and linkss:
-  https://www.react-reveal.com/
-  https://react-bootstrap.github.io/
-  https://fonts.google.com/about
+- https://www.react-reveal.com/
+- https://react-bootstrap.github.io/
+- https://fonts.google.com/about
